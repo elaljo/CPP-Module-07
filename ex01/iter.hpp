@@ -6,7 +6,7 @@
 /*   By: moelalj <moelalj@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 17:50:02 by moelalj           #+#    #+#             */
-/*   Updated: 2025/01/01 21:52:46 by moelalj          ###   ########.fr       */
+/*   Updated: 2025/01/04 22:38:42 by moelalj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 # define ITER_HPP
 
 #include <iostream>
+
 template    <typename T>
-void    print(T x){
-    std::cout << x << std::endl;
+void    print(T data){
+    std::cout << data << std::endl;
 }
 
 template    <typename T>

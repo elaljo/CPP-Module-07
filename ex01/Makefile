@@ -6,7 +6,7 @@
 #    By: moelalj <moelalj@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/27 17:49:15 by moelalj           #+#    #+#              #
-#    Updated: 2024/12/27 17:49:49 by moelalj          ###   ########.fr        #
+#    Updated: 2025/01/01 22:28:34 by moelalj          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJS := $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-%.o:%.cpp Iter.hpp
+%.o:%.cpp iter.hpp
 	$(g++) $(CPPFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
