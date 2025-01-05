@@ -6,7 +6,7 @@
 /*   By: moelalj <moelalj@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 22:32:57 by moelalj           #+#    #+#             */
-/*   Updated: 2025/01/04 16:50:27 by moelalj          ###   ########.fr       */
+/*   Updated: 2025/01/05 15:51:56 by moelalj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Array{
             std::cout << "Default Constructor Called" << std::endl;
         }
         Array(const unsigned int n) : arr_size(n), index(0){
-            std::cout << "Construtor Called" << std::endl;
+            std::cout << "Constructor Called" << std::endl;
             arr = new T[n];
         }
         Array(const Array& rhs){
@@ -52,9 +52,20 @@ class Array{
             delete[] arr;
         }
         
+        class IndexExecption : public std::exception{
+            virtual const char* what() const throw(){
+                return "Index not found - Please enter a valide index";
+            }
+        };
+        class FullException : public std::exception{
+            virtual const char* what() const throw(){
+                return "Can't push to the Array, is full..";
+            }
+        };
+        
         T& operator[](int i){
             if (i >= arr_size || i < 0)
-                throw "Index not found - Please try a valide index";
+                throw IndexExecption();
             return (arr[i]);
         }
         
@@ -64,7 +75,7 @@ class Array{
 
         void push(T data){
             if (index >= arr_size || index < 0)
-                throw "Can't push Array is full";
+                throw FullException();
             arr[index] = data;
             index++;
         }
